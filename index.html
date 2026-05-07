@@ -33,6 +33,7 @@ color:white;
 
 #splash h1{
 font-size:55px;
+letter-spacing:2px;
 }
 
 #splash p{
@@ -58,6 +59,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 .center-card h2{
 text-align:center;
 margin-bottom:25px;
+color:#0F172A;
 }
 
 .center-card input{
@@ -77,6 +79,7 @@ border:none;
 border-radius:14px;
 color:white;
 font-size:16px;
+cursor:pointer;
 }
 
 /* TOPBAR */
@@ -175,6 +178,7 @@ background:linear-gradient(to right,#0F172A,#2563EB);
 
 .card h3{
 padding:18px 18px 5px;
+color:#0F172A;
 }
 
 .card p{
@@ -191,6 +195,7 @@ border:none;
 border-radius:12px;
 background:#2563EB;
 color:white;
+cursor:pointer;
 }
 
 /* SERVICE PAGE */
@@ -205,6 +210,7 @@ border:none;
 background:#2563EB;
 color:white;
 border-radius:12px;
+cursor:pointer;
 }
 
 .serviceContent{
@@ -228,6 +234,7 @@ padding:16px;
 border-radius:14px;
 border:1px solid #ccc;
 margin-bottom:16px;
+font-size:15px;
 }
 
 .serviceContent button{
@@ -238,6 +245,7 @@ border:none;
 border-radius:14px;
 color:white;
 font-size:16px;
+cursor:pointer;
 }
 
 /* LOADER */
@@ -267,6 +275,7 @@ transform:rotate(360deg);
 
 .loaderBox h2{
 margin-top:20px;
+color:#0F172A;
 }
 
 /* BOOKING */
@@ -299,6 +308,13 @@ background:#DBEAFE;
 padding:14px;
 margin-bottom:12px;
 border-radius:12px;
+font-weight:bold;
+}
+
+.arriveText{
+margin-top:18px;
+color:#2563EB;
+font-weight:bold;
 }
 
 .callBtn{
@@ -310,6 +326,7 @@ border-radius:12px;
 color:white;
 margin-top:15px;
 font-size:16px;
+cursor:pointer;
 }
 
 .cancelBtn{
@@ -321,6 +338,7 @@ border-radius:12px;
 color:white;
 margin-top:12px;
 font-size:16px;
+cursor:pointer;
 }
 
 /* RATING */
@@ -358,6 +376,7 @@ background:#22C55E;
 border:none;
 border-radius:12px;
 color:white;
+cursor:pointer;
 }
 
 /* SIDE MENU */
@@ -397,6 +416,7 @@ background:#2563EB;
 border:none;
 border-radius:12px;
 color:white;
+cursor:pointer;
 }
 
 /* FOOTER */
@@ -421,6 +441,8 @@ font-size:13px;
 color:#94A3B8;
 }
 
+/* HIDDEN */
+
 .hidden{
 display:none;
 }
@@ -444,7 +466,7 @@ display:none;
 
 <div id="loginPage" class="center-card hidden">
 
-<h2>Welcome</h2>
+<h2>Welcome to VEYRO</h2>
 
 <input type="tel" id="mobile" maxlength="10" placeholder="Enter Mobile Number">
 
@@ -468,9 +490,9 @@ display:none;
 
 <div class="offerTrack">
 
-<div class="offer">20% OFF on Cleaning</div>
+<div class="offer">20% OFF on Cleaning Services</div>
 
-<div class="offer">Fast Electrician Service</div>
+<div class="offer">Fast Electrician Service Available</div>
 
 <div class="offer">New User Discount Available</div>
 
@@ -538,7 +560,7 @@ display:none;
 
 </div>
 
-<!-- SERVICE -->
+<!-- SERVICE PAGE -->
 
 <div id="servicePage" class="hidden">
 
@@ -598,7 +620,9 @@ display:none;
 
 <h2>Professional On The Way</h2>
 
-<p id="arrivalTime"></p>
+<p class="arriveText">
+Professional will reach your location in 10 mins
+</p>
 
 <br>
 
@@ -610,9 +634,7 @@ display:none;
 
 <div>Booking Confirmed</div>
 
-<div>Worker Assigned</div>
-
-<div>On The Way</div>
+<div>Professional On The Way</div>
 
 </div>
 
@@ -696,7 +718,7 @@ display:none;
 
 <p>Fast Home Services</p>
 
-<span>© 2025 VEYRO. All Rights Reserved.</span>
+<span>© 2026 VEYRO. All Rights Reserved.</span>
 
 </div>
 
@@ -761,27 +783,6 @@ setTimeout(() => {
 document.getElementById("loadingPage").classList.add("hidden");
 
 document.getElementById("bookingPage").classList.remove("hidden");
-
-let now = new Date();
-
-now.setMinutes(now.getMinutes() + 10);
-
-let hours = now.getHours();
-
-let minutes = now.getMinutes();
-
-if(minutes < 10){
-minutes = "0" + minutes;
-}
-
-let ampm = hours >= 12 ? "PM" : "AM";
-
-hours = hours % 12;
-
-hours = hours ? hours : 12;
-
-document.getElementById("arrivalTime").innerText =
-"Arriving at " + hours + ":" + minutes + " " + ampm;
 
 },2500);
 
