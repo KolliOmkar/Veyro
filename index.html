@@ -15,7 +15,7 @@ font-family:Arial;
 }
 
 body{
-background:#F8FAFC;
+background:#F1F5F9;
 overflow-x:hidden;
 }
 
@@ -33,7 +33,6 @@ color:white;
 
 #splash h1{
 font-size:55px;
-letter-spacing:2px;
 }
 
 #splash p{
@@ -53,20 +52,19 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-box-shadow:0 10px 40px rgba(0,0,0,0.12);
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 .center-card h2{
 text-align:center;
 margin-bottom:25px;
-color:#0F172A;
 }
 
 .center-card input{
 width:100%;
 padding:16px;
-border-radius:14px;
 border:1px solid #ccc;
+border-radius:14px;
 margin-bottom:18px;
 font-size:16px;
 }
@@ -81,19 +79,22 @@ color:white;
 font-size:16px;
 }
 
-/* HOME */
+/* TOPBAR */
 
 .topbar{
 background:#0F172A;
-color:white;
 padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+color:white;
+position:sticky;
+top:0;
+z-index:99;
 }
 
 .logo{
-font-size:26px;
+font-size:28px;
 font-weight:bold;
 }
 
@@ -105,17 +106,16 @@ cursor:pointer;
 /* OFFER */
 
 .offerSlider{
-width:100%;
-overflow:hidden;
 background:#2563EB;
 color:white;
+overflow:hidden;
 padding:12px 0;
 }
 
 .offerTrack{
 display:flex;
 width:max-content;
-animation:slide 15s linear infinite;
+animation:slide 14s linear infinite;
 }
 
 .offer{
@@ -136,7 +136,7 @@ transform:translateX(-50%);
 /* SEARCH */
 
 .searchBox{
-padding:15px;
+padding:16px;
 }
 
 .searchBox input{
@@ -150,15 +150,15 @@ box-shadow:0 3px 10px rgba(0,0,0,0.08);
 /* SERVICES */
 
 .services{
-padding:15px;
+padding:16px;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:15px;
+gap:16px;
 }
 
 .card{
 background:white;
-border-radius:22px;
+border-radius:24px;
 overflow:hidden;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
 transition:0.3s;
@@ -175,7 +175,6 @@ background:linear-gradient(to right,#0F172A,#2563EB);
 
 .card h3{
 padding:18px 18px 5px;
-color:#0F172A;
 }
 
 .card p{
@@ -196,6 +195,18 @@ color:white;
 
 /* SERVICE PAGE */
 
+.serviceTop{
+padding:15px;
+}
+
+.serviceTop button{
+padding:12px 18px;
+border:none;
+background:#2563EB;
+color:white;
+border-radius:12px;
+}
+
 .serviceContent{
 padding:20px;
 }
@@ -205,15 +216,16 @@ margin-bottom:10px;
 }
 
 .serviceContent p{
-margin-bottom:20px;
 color:#2563EB;
+margin-bottom:20px;
 }
 
 .serviceContent input,
-.serviceContent textarea{
+.serviceContent textarea,
+.serviceContent select{
 width:100%;
 padding:16px;
-border-radius:12px;
+border-radius:14px;
 border:1px solid #ccc;
 margin-bottom:16px;
 }
@@ -221,22 +233,11 @@ margin-bottom:16px;
 .serviceContent button{
 width:100%;
 padding:16px;
-border:none;
 background:#2563EB;
-color:white;
-border-radius:12px;
-}
-
-.serviceTop{
-padding:15px;
-}
-
-.serviceTop button{
-padding:10px 18px;
 border:none;
-background:#2563EB;
+border-radius:14px;
 color:white;
-border-radius:10px;
+font-size:16px;
 }
 
 /* LOADER */
@@ -244,9 +245,9 @@ border-radius:10px;
 .loaderBox{
 height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 }
 
 .loader{
@@ -266,7 +267,6 @@ transform:rotate(360deg);
 
 .loaderBox h2{
 margin-top:20px;
-color:#0F172A;
 }
 
 /* BOOKING */
@@ -274,7 +274,7 @@ color:#0F172A;
 .bookingBox{
 width:90%;
 max-width:420px;
-margin:100px auto;
+margin:80px auto;
 background:white;
 padding:35px;
 border-radius:24px;
@@ -282,8 +282,12 @@ box-shadow:0 5px 20px rgba(0,0,0,0.08);
 text-align:center;
 }
 
-.bookingBox h2{
-margin-bottom:15px;
+.workerPhoto{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#CBD5E1;
+margin:0 auto 15px;
 }
 
 .status{
@@ -291,10 +295,32 @@ margin-top:20px;
 }
 
 .status div{
-background:#E0E7FF;
+background:#DBEAFE;
 padding:14px;
 margin-bottom:12px;
 border-radius:12px;
+}
+
+.callBtn{
+width:100%;
+padding:15px;
+background:#22C55E;
+border:none;
+border-radius:12px;
+color:white;
+margin-top:15px;
+font-size:16px;
+}
+
+.cancelBtn{
+width:100%;
+padding:15px;
+background:red;
+border:none;
+border-radius:12px;
+color:white;
+margin-top:12px;
+font-size:16px;
 }
 
 /* RATING */
@@ -302,12 +328,12 @@ border-radius:12px;
 .ratingBox{
 width:90%;
 max-width:420px;
-margin:100px auto;
+margin:80px auto;
 background:white;
 padding:35px;
 border-radius:24px;
-text-align:center;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
+text-align:center;
 }
 
 .stars{
@@ -328,9 +354,9 @@ border:1px solid #ccc;
 width:100%;
 padding:16px;
 margin-top:15px;
+background:#22C55E;
 border:none;
 border-radius:12px;
-background:#22C55E;
 color:white;
 }
 
@@ -343,15 +369,15 @@ right:-100%;
 width:280px;
 height:100vh;
 background:white;
-box-shadow:-5px 0 20px rgba(0,0,0,0.1);
 padding:25px;
 transition:0.3s;
+box-shadow:-5px 0 20px rgba(0,0,0,0.1);
 z-index:999;
 }
 
 .closeBtn{
-font-size:32px;
 text-align:right;
+font-size:32px;
 cursor:pointer;
 }
 
@@ -360,44 +386,40 @@ margin-bottom:20px;
 }
 
 #sideMenu p{
-margin:10px 0;
+margin:12px 0;
 }
 
 #sideMenu button{
 width:100%;
 padding:14px;
 margin-top:12px;
+background:#2563EB;
 border:none;
 border-radius:12px;
-background:#2563EB;
 color:white;
 }
 
 /* FOOTER */
 
 .footer{
-margin-top:40px;
 background:#0F172A;
 color:white;
 text-align:center;
 padding:40px 20px;
-}
-
-.footer h3{
-margin-bottom:10px;
+margin-top:40px;
 }
 
 .footer p{
-margin-bottom:10px;
+margin-top:10px;
 color:#CBD5E1;
 }
 
 .footer span{
-color:#94A3B8;
+display:block;
+margin-top:10px;
 font-size:13px;
+color:#94A3B8;
 }
-
-/* HIDDEN */
 
 .hidden{
 display:none;
@@ -422,7 +444,7 @@ display:none;
 
 <div id="loginPage" class="center-card hidden">
 
-<h2>Welcome to VEYRO</h2>
+<h2>Welcome</h2>
 
 <input type="tel" id="mobile" maxlength="10" placeholder="Enter Mobile Number">
 
@@ -446,11 +468,11 @@ display:none;
 
 <div class="offerTrack">
 
-<div class="offer">20% OFF on Cleaning Services</div>
+<div class="offer">20% OFF on Cleaning</div>
 
-<div class="offer">Fast Electrician Service Available</div>
+<div class="offer">Fast Electrician Service</div>
 
-<div class="offer">New User Discounts Available</div>
+<div class="offer">New User Discount Available</div>
 
 </div>
 
@@ -470,9 +492,9 @@ display:none;
 
 <h3>Cleaning</h3>
 
-<p>Professional home deep cleaning service.</p>
+<p>Professional Home Cleaning</p>
 
-<button>Book Now</button>
+<button>Book</button>
 
 </div>
 
@@ -482,9 +504,9 @@ display:none;
 
 <h3>Plumber</h3>
 
-<p>Quick plumbing repair service.</p>
+<p>Quick Plumbing Service</p>
 
-<button>Book Now</button>
+<button>Book</button>
 
 </div>
 
@@ -494,9 +516,9 @@ display:none;
 
 <h3>Electrician</h3>
 
-<p>Professional electrical services.</p>
+<p>Electrical Repair Service</p>
 
-<button>Book Now</button>
+<button>Book</button>
 
 </div>
 
@@ -506,17 +528,17 @@ display:none;
 
 <h3>Painter</h3>
 
-<p>Wall painting & polishing services.</p>
+<p>Wall Painting Service</p>
 
-<button>Book Now</button>
-
-</div>
+<button>Book</button>
 
 </div>
 
 </div>
 
-<!-- SERVICE PAGE -->
+</div>
+
+<!-- SERVICE -->
 
 <div id="servicePage" class="hidden">
 
@@ -534,9 +556,19 @@ display:none;
 
 <input type="text" placeholder="Enter Location">
 
-<textarea placeholder="Notes"></textarea>
+<textarea placeholder="Problem Details"></textarea>
 
-<button onclick="bookService()">Book Service</button>
+<select>
+
+<option>Cash Payment</option>
+
+<option>UPI Payment</option>
+
+<option>Card Payment</option>
+
+</select>
+
+<button onclick="bookService()">Confirm Booking</button>
 
 </div>
 
@@ -562,9 +594,17 @@ display:none;
 
 <div class="bookingBox">
 
-<h2>Booking Confirmed</h2>
+<div class="workerPhoto"></div>
 
-<p>Professional arriving soon</p>
+<h2>Professional On The Way</h2>
+
+<p id="arrivalTime"></p>
+
+<br>
+
+<h3>Worker: Rahul Kumar</h3>
+
+<p>⭐ 4.9 Rating</p>
 
 <div class="status">
 
@@ -576,6 +616,26 @@ display:none;
 
 </div>
 
+<button class="callBtn">Call Worker</button>
+
+<button class="cancelBtn" onclick="cancelBooking()">Cancel Booking</button>
+
+</div>
+
+</div>
+
+<!-- CANCEL -->
+
+<div id="cancelPage" class="hidden">
+
+<div class="bookingBox">
+
+<h2>Booking Cancelled</h2>
+
+<p>Your booking cancelled successfully.</p>
+
+<button class="callBtn" onclick="goHome()">Back Home</button>
+
 </div>
 
 </div>
@@ -586,11 +646,13 @@ display:none;
 
 <div class="ratingBox">
 
-<h2>Thank You For Choosing VEYRO</h2>
+<h2>Work Completed</h2>
+
+<p>Please Rate Your Experience</p>
 
 <div class="stars">★★★★★</div>
 
-<textarea placeholder="Write feedback"></textarea>
+<textarea placeholder="Write Feedback"></textarea>
 
 <button onclick="submitRating()">Submit Feedback</button>
 
@@ -630,7 +692,7 @@ display:none;
 
 <div class="footer">
 
-<h3>VEYRO</h3>
+<h2>VEYRO</h2>
 
 <p>Fast Home Services</p>
 
@@ -654,7 +716,7 @@ let mobile = document.getElementById("mobile").value;
 
 if(mobile.length !== 10){
 
-alert("Enter valid 10 digit mobile number");
+alert("Enter valid 10 digit number");
 
 return;
 }
@@ -679,6 +741,12 @@ function goHome(){
 
 document.getElementById("servicePage").classList.add("hidden");
 
+document.getElementById("cancelPage").classList.add("hidden");
+
+document.getElementById("ratingPage").classList.add("hidden");
+
+document.getElementById("bookingPage").classList.add("hidden");
+
 document.getElementById("homePage").classList.remove("hidden");
 }
 
@@ -694,12 +762,50 @@ document.getElementById("loadingPage").classList.add("hidden");
 
 document.getElementById("bookingPage").classList.remove("hidden");
 
+let now = new Date();
+
+now.setMinutes(now.getMinutes() + 10);
+
+let hours = now.getHours();
+
+let minutes = now.getMinutes();
+
+if(minutes < 10){
+minutes = "0" + minutes;
+}
+
+let ampm = hours >= 12 ? "PM" : "AM";
+
+hours = hours % 12;
+
+hours = hours ? hours : 12;
+
+document.getElementById("arrivalTime").innerText =
+"Arriving at " + hours + ":" + minutes + " " + ampm;
+
 },2500);
+
+setTimeout(() => {
+
+document.getElementById("bookingPage").classList.add("hidden");
+
+document.getElementById("ratingPage").classList.remove("hidden");
+
+},15000);
+}
+
+function cancelBooking(){
+
+document.getElementById("bookingPage").classList.add("hidden");
+
+document.getElementById("cancelPage").classList.remove("hidden");
 }
 
 function submitRating(){
 
 alert("Thank You For Your Feedback");
+
+goHome();
 }
 
 function openMenu(){
