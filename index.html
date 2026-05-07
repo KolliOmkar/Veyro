@@ -15,25 +15,26 @@ font-family:Arial;
 }
 
 body{
-background:#F1F5F9;
+background:#EEF4FF;
 overflow-x:hidden;
+color:#0F172A;
 }
 
 /* SPLASH */
 
 #splash{
 height:100vh;
-background:linear-gradient(to bottom,#0F172A,#2563EB);
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+background:linear-gradient(135deg,#0F172A,#2563EB);
 color:white;
 }
 
 #splash h1{
-font-size:55px;
-letter-spacing:2px;
+font-size:60px;
+letter-spacing:3px;
 }
 
 #splash p{
@@ -43,12 +44,12 @@ font-size:18px;
 
 /* LOGIN */
 
-.center-card{
+.loginBox{
 width:90%;
 max-width:420px;
 background:white;
 padding:35px;
-border-radius:24px;
+border-radius:25px;
 position:absolute;
 top:50%;
 left:50%;
@@ -56,22 +57,21 @@ transform:translate(-50%,-50%);
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-.center-card h2{
+.loginBox h2{
 text-align:center;
 margin-bottom:25px;
-color:#0F172A;
 }
 
-.center-card input{
+.loginBox input{
 width:100%;
 padding:16px;
-border:1px solid #ccc;
 border-radius:14px;
-margin-bottom:18px;
+border:1px solid #ccc;
+margin-bottom:16px;
 font-size:16px;
 }
 
-.center-card button{
+.loginBox button{
 width:100%;
 padding:16px;
 background:#2563EB;
@@ -102,58 +102,61 @@ font-weight:bold;
 }
 
 .menu{
-font-size:30px;
+font-size:32px;
 cursor:pointer;
 }
 
-/* OFFER */
+/* WELCOME */
 
-.offerSlider{
-background:#2563EB;
+.welcome{
+padding:20px;
+}
+
+.welcome h2{
+font-size:28px;
+}
+
+.welcome p{
+color:#2563EB;
+margin-top:5px;
+}
+
+/* OFFERS */
+
+.offerBox{
+margin:0 20px 20px;
+padding:20px;
+background:linear-gradient(to right,#2563EB,#3B82F6);
+border-radius:24px;
 color:white;
-overflow:hidden;
-padding:12px 0;
 }
 
-.offerTrack{
-display:flex;
-width:max-content;
-animation:slide 14s linear infinite;
+.offerBox h3{
+font-size:24px;
 }
 
-.offer{
-padding:0 40px;
-white-space:nowrap;
-}
-
-@keyframes slide{
-from{
-transform:translateX(0);
-}
-
-to{
-transform:translateX(-50%);
-}
+.offerBox p{
+margin-top:8px;
 }
 
 /* SEARCH */
 
-.searchBox{
-padding:16px;
+.search{
+padding:0 20px 20px;
 }
 
-.searchBox input{
+.search input{
 width:100%;
 padding:16px;
 border:none;
 border-radius:14px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 /* SERVICES */
 
 .services{
-padding:16px;
+padding:0 20px 100px;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:16px;
@@ -177,67 +180,70 @@ background:linear-gradient(to right,#0F172A,#2563EB);
 }
 
 .card h3{
-padding:18px 18px 5px;
-color:#0F172A;
+padding:18px 18px 8px;
 }
 
 .card p{
 padding:0 18px;
-font-size:14px;
 color:gray;
+font-size:14px;
 }
 
 .card button{
 margin:18px;
 width:calc(100% - 36px);
 padding:14px;
+background:#2563EB;
 border:none;
 border-radius:12px;
-background:#2563EB;
 color:white;
 cursor:pointer;
 }
 
 /* SERVICE PAGE */
 
-.serviceTop{
-padding:15px;
+.servicePage{
+padding:20px;
+padding-bottom:100px;
 }
 
-.serviceTop button{
+.backBtn{
 padding:12px 18px;
-border:none;
 background:#2563EB;
-color:white;
+border:none;
 border-radius:12px;
+color:white;
+margin-bottom:20px;
 cursor:pointer;
 }
 
-.serviceContent{
-padding:20px;
+.serviceCard{
+background:white;
+padding:25px;
+border-radius:24px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
-.serviceContent h2{
+.serviceCard h2{
 margin-bottom:10px;
 }
 
-.serviceContent p{
+.serviceCard p{
 color:#2563EB;
 margin-bottom:20px;
 }
 
-.serviceContent input,
-.serviceContent textarea,
-.serviceContent select{
+.serviceCard input,
+.serviceCard textarea,
+.serviceCard select{
 width:100%;
 padding:16px;
 border-radius:14px;
 border:1px solid #ccc;
 margin-bottom:16px;
-font-size:15px;
 }
 
-.serviceContent button{
+.serviceCard button{
 width:100%;
 padding:16px;
 background:#2563EB;
@@ -250,7 +256,7 @@ cursor:pointer;
 
 /* LOADER */
 
-.loaderBox{
+.loaderPage{
 height:100vh;
 display:flex;
 justify-content:center;
@@ -273,58 +279,78 @@ transform:rotate(360deg);
 }
 }
 
-.loaderBox h2{
+.loaderPage h2{
 margin-top:20px;
-color:#0F172A;
 }
 
 /* BOOKING */
 
-.bookingBox{
-width:90%;
-max-width:420px;
-margin:80px auto;
+.bookingPage{
+padding:20px 20px 100px;
+}
+
+.bookingCard{
 background:white;
-padding:35px;
+padding:25px;
 border-radius:24px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.worker{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:25px;
+}
+
+.workerImg{
+width:80px;
+height:80px;
+border-radius:50%;
+background:#CBD5E1;
+}
+
+.worker h3{
+margin-bottom:5px;
+}
+
+.statusStep{
+padding:14px;
+background:#DBEAFE;
+border-radius:12px;
+margin-bottom:12px;
+font-weight:bold;
+}
+
+.arrive{
+margin-top:20px;
+color:#2563EB;
+font-weight:bold;
+}
+
+.otpBox{
+margin-top:25px;
+padding:20px;
+background:#EFF6FF;
+border-radius:20px;
 text-align:center;
 }
 
-.workerPhoto{
-width:90px;
-height:90px;
-border-radius:50%;
-background:#CBD5E1;
-margin:0 auto 15px;
-}
-
-.status{
-margin-top:20px;
-}
-
-.status div{
-background:#DBEAFE;
-padding:14px;
-margin-bottom:12px;
-border-radius:12px;
-font-weight:bold;
-}
-
-.arriveText{
-margin-top:18px;
+.otpBox h1{
+font-size:42px;
+letter-spacing:8px;
+margin-top:10px;
 color:#2563EB;
-font-weight:bold;
 }
 
 .callBtn{
 width:100%;
 padding:15px;
+margin-top:18px;
 background:#22C55E;
 border:none;
 border-radius:12px;
 color:white;
-margin-top:15px;
 font-size:16px;
 cursor:pointer;
 }
@@ -332,91 +358,119 @@ cursor:pointer;
 .cancelBtn{
 width:100%;
 padding:15px;
+margin-top:12px;
 background:red;
 border:none;
 border-radius:12px;
 color:white;
-margin-top:12px;
 font-size:16px;
 cursor:pointer;
 }
 
 /* RATING */
 
-.ratingBox{
-width:90%;
-max-width:420px;
-margin:80px auto;
+.ratingPage{
+padding:20px;
+padding-bottom:100px;
+}
+
+.ratingCard{
 background:white;
-padding:35px;
+padding:30px;
 border-radius:24px;
 box-shadow:0 5px 20px rgba(0,0,0,0.08);
 text-align:center;
 }
 
 .stars{
-font-size:38px;
+font-size:42px;
 margin:20px 0;
 color:gold;
 }
 
-.ratingBox textarea{
+.ratingCard textarea{
 width:100%;
 height:120px;
 padding:16px;
-border-radius:12px;
+border-radius:14px;
 border:1px solid #ccc;
 }
 
-.ratingBox button{
+.ratingCard button{
 width:100%;
 padding:16px;
 margin-top:15px;
-background:#22C55E;
+background:#2563EB;
 border:none;
 border-radius:12px;
 color:white;
+font-size:16px;
 cursor:pointer;
 }
 
-/* SIDE MENU */
+/* PROFILE */
 
-#sideMenu{
+#profileMenu{
 position:fixed;
 top:0;
 right:-100%;
-width:280px;
+width:300px;
 height:100vh;
 background:white;
 padding:25px;
 transition:0.3s;
-box-shadow:-5px 0 20px rgba(0,0,0,0.1);
 z-index:999;
+box-shadow:-5px 0 20px rgba(0,0,0,0.1);
+overflow:auto;
 }
 
-.closeBtn{
+.close{
 text-align:right;
-font-size:32px;
+font-size:34px;
 cursor:pointer;
 }
 
-#sideMenu h2{
-margin-bottom:20px;
+.profileTop{
+text-align:center;
+margin-bottom:25px;
 }
 
-#sideMenu p{
-margin:12px 0;
+.profilePhoto{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#CBD5E1;
+margin:auto;
+margin-bottom:12px;
 }
 
-#sideMenu button{
+.menuBtn{
 width:100%;
-padding:14px;
+padding:15px;
 margin-top:12px;
 background:#2563EB;
 border:none;
 border-radius:12px;
 color:white;
 cursor:pointer;
+}
+
+/* BOTTOM NAV */
+
+.bottomNav{
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:14px 0;
+box-shadow:0 -5px 20px rgba(0,0,0,0.08);
+}
+
+.bottomNav div{
+text-align:center;
+font-size:14px;
 }
 
 /* FOOTER */
@@ -426,19 +480,13 @@ background:#0F172A;
 color:white;
 text-align:center;
 padding:40px 20px;
-margin-top:40px;
-}
-
-.footer p{
-margin-top:10px;
-color:#CBD5E1;
 }
 
 .footer span{
 display:block;
 margin-top:10px;
 font-size:13px;
-color:#94A3B8;
+color:#CBD5E1;
 }
 
 /* HIDDEN */
@@ -458,17 +506,17 @@ display:none;
 
 <h1>VEYRO</h1>
 
-<p>Fast Home Services</p>
+<p>Professional Home Services</p>
 
 </div>
 
 <!-- LOGIN -->
 
-<div id="loginPage" class="center-card hidden">
+<div id="loginPage" class="loginBox hidden">
 
 <h2>Welcome to VEYRO</h2>
 
-<input type="tel" id="mobile" maxlength="10" placeholder="Enter Mobile Number">
+<input type="tel" id="mobile" placeholder="Enter Mobile Number" maxlength="10">
 
 <button onclick="login()">Send OTP</button>
 
@@ -482,25 +530,27 @@ display:none;
 
 <div class="logo">VEYRO</div>
 
-<div class="menu" onclick="openMenu()">☰</div>
+<div class="menu" onclick="openProfile()">☰</div>
 
 </div>
 
-<div class="offerSlider">
+<div class="welcome">
 
-<div class="offerTrack">
+<h2>Welcome Back 👋</h2>
 
-<div class="offer">20% OFF on Cleaning Services</div>
-
-<div class="offer">Fast Electrician Service Available</div>
-
-<div class="offer">New User Discount Available</div>
+<p>Book trusted home services instantly</p>
 
 </div>
 
+<div class="offerBox">
+
+<h3>20% OFF</h3>
+
+<p>For New Customers Today</p>
+
 </div>
 
-<div class="searchBox">
+<div class="search">
 
 <input type="text" placeholder="Search Services">
 
@@ -514,9 +564,9 @@ display:none;
 
 <h3>Cleaning</h3>
 
-<p>Professional Home Cleaning</p>
+<p>Professional home cleaning service</p>
 
-<button>Book</button>
+<button>Book Now</button>
 
 </div>
 
@@ -526,9 +576,9 @@ display:none;
 
 <h3>Plumber</h3>
 
-<p>Quick Plumbing Service</p>
+<p>Quick plumbing repair service</p>
 
-<button>Book</button>
+<button>Book Now</button>
 
 </div>
 
@@ -538,9 +588,9 @@ display:none;
 
 <h3>Electrician</h3>
 
-<p>Electrical Repair Service</p>
+<p>Electrical repair service</p>
 
-<button>Book</button>
+<button>Book Now</button>
 
 </div>
 
@@ -550,9 +600,9 @@ display:none;
 
 <h3>Painter</h3>
 
-<p>Wall Painting Service</p>
+<p>Professional wall painting</p>
 
-<button>Book</button>
+<button>Book Now</button>
 
 </div>
 
@@ -562,23 +612,19 @@ display:none;
 
 <!-- SERVICE PAGE -->
 
-<div id="servicePage" class="hidden">
+<div id="servicePage" class="servicePage hidden">
 
-<div class="serviceTop">
+<button class="backBtn" onclick="backHome()">← Back</button>
 
-<button onclick="goHome()">← Back</button>
-
-</div>
-
-<div class="serviceContent">
+<div class="serviceCard">
 
 <h2 id="serviceName"></h2>
 
 <p id="servicePrice"></p>
 
-<input type="text" placeholder="Enter Location">
+<input type="text" placeholder="Enter Service Location">
 
-<textarea placeholder="Problem Details"></textarea>
+<textarea placeholder="Describe Your Problem"></textarea>
 
 <select>
 
@@ -590,17 +636,15 @@ display:none;
 
 </select>
 
-<button onclick="bookService()">Confirm Booking</button>
+<button onclick="confirmBooking()">Confirm Booking</button>
 
 </div>
 
 </div>
 
-<!-- LOADING -->
+<!-- LOADER -->
 
-<div id="loadingPage" class="hidden">
-
-<div class="loaderBox">
+<div id="loaderPage" class="loaderPage hidden">
 
 <div class="loader"></div>
 
@@ -608,33 +652,49 @@ display:none;
 
 </div>
 
-</div>
-
 <!-- BOOKING -->
 
-<div id="bookingPage" class="hidden">
+<div id="bookingPage" class="bookingPage hidden">
 
-<div class="bookingBox">
+<div class="bookingCard">
 
-<div class="workerPhoto"></div>
+<div class="worker">
 
-<h2>Professional On The Way</h2>
+<div class="workerImg"></div>
 
-<p class="arriveText">
+<div>
+
+<h3>Rahul Kumar</h3>
+
+<p>⭐ 4.9 • 5 Years Experience</p>
+
+<p>✔ Verified Professional</p>
+
+</div>
+
+</div>
+
+<div class="statusStep">✅ Booking Confirmed</div>
+
+<div class="statusStep">✅ Professional Assigned</div>
+
+<div class="statusStep">✅ Professional On The Way</div>
+
+<div class="statusStep">⬜ Reached Location</div>
+
+<div class="statusStep">⬜ Work Started</div>
+
+<div class="statusStep">⬜ Work Completed</div>
+
+<p class="arrive">
 Professional will reach your location in 10 mins
 </p>
 
-<br>
+<div class="otpBox">
 
-<h3>Worker: Rahul Kumar</h3>
+<p>Share OTP After Worker Reaches</p>
 
-<p>⭐ 4.9 Rating</p>
-
-<div class="status">
-
-<div>Booking Confirmed</div>
-
-<div>Professional On The Way</div>
+<h1>4821</h1>
 
 </div>
 
@@ -642,21 +702,7 @@ Professional will reach your location in 10 mins
 
 <button class="cancelBtn" onclick="cancelBooking()">Cancel Booking</button>
 
-</div>
-
-</div>
-
-<!-- CANCEL -->
-
-<div id="cancelPage" class="hidden">
-
-<div class="bookingBox">
-
-<h2>Booking Cancelled</h2>
-
-<p>Your booking cancelled successfully.</p>
-
-<button class="callBtn" onclick="goHome()">Back Home</button>
+<button class="callBtn" onclick="completeWork()">Admin Complete Work</button>
 
 </div>
 
@@ -664,9 +710,9 @@ Professional will reach your location in 10 mins
 
 <!-- RATING -->
 
-<div id="ratingPage" class="hidden">
+<div id="ratingPage" class="ratingPage hidden">
 
-<div class="ratingBox">
+<div class="ratingCard">
 
 <h2>Work Completed</h2>
 
@@ -676,37 +722,57 @@ Professional will reach your location in 10 mins
 
 <textarea placeholder="Write Feedback"></textarea>
 
-<button onclick="submitRating()">Submit Feedback</button>
+<button onclick="submitFeedback()">Submit Feedback</button>
 
 </div>
 
 </div>
 
-<!-- SIDE MENU -->
+<!-- PROFILE -->
 
-<div id="sideMenu">
+<div id="profileMenu">
 
-<div class="closeBtn" onclick="closeMenu()">×</div>
+<div class="close" onclick="closeProfile()">×</div>
 
-<h2>Customer Profile</h2>
+<div class="profileTop">
 
-<p>Name: Customer</p>
+<div class="profilePhoto"></div>
 
-<p>Mobile: 9876543210</p>
+<h2>Customer</h2>
 
-<hr><br>
+<p>9876543210</p>
 
-<p>Total Bookings: 5</p>
+</div>
 
-<p>Completed: 4</p>
+<p><b>Total Bookings:</b> 5</p>
 
-<p>Cancelled: 1</p>
+<p><b>Completed:</b> 4</p>
 
-<button>Booking History</button>
+<p><b>Cancelled:</b> 1</p>
 
-<button>Help & Support</button>
+<button class="menuBtn">Booking History</button>
 
-<button>Logout</button>
+<button class="menuBtn">Saved Addresses</button>
+
+<button class="menuBtn">Offers & Coupons</button>
+
+<button class="menuBtn">Help & Support</button>
+
+<button class="menuBtn">Logout</button>
+
+</div>
+
+<!-- BOTTOM NAV -->
+
+<div class="bottomNav">
+
+<div>🏠<br>Home</div>
+
+<div>📋<br>Bookings</div>
+
+<div>💬<br>Support</div>
+
+<div>👤<br>Profile</div>
 
 </div>
 
@@ -716,7 +782,7 @@ Professional will reach your location in 10 mins
 
 <h2>VEYRO</h2>
 
-<p>Fast Home Services</p>
+<p>Professional Home Services</p>
 
 <span>© 2026 VEYRO. All Rights Reserved.</span>
 
@@ -726,7 +792,7 @@ Professional will reach your location in 10 mins
 
 setTimeout(() => {
 
-document.getElementById("splash").style.display = "none";
+document.getElementById("splash").style.display="none";
 
 document.getElementById("loginPage").classList.remove("hidden");
 
@@ -734,11 +800,11 @@ document.getElementById("loginPage").classList.remove("hidden");
 
 function login(){
 
-let mobile = document.getElementById("mobile").value;
+let mobile=document.getElementById("mobile").value;
 
-if(mobile.length !== 10){
+if(mobile.length!=10){
 
-alert("Enter valid 10 digit number");
+alert("Enter valid mobile number");
 
 return;
 }
@@ -746,6 +812,7 @@ return;
 document.getElementById("loginPage").classList.add("hidden");
 
 document.getElementById("homePage").classList.remove("hidden");
+
 }
 
 function openService(name,price){
@@ -754,69 +821,70 @@ document.getElementById("homePage").classList.add("hidden");
 
 document.getElementById("servicePage").classList.remove("hidden");
 
-document.getElementById("serviceName").innerText = name;
+document.getElementById("serviceName").innerText=name;
 
-document.getElementById("servicePrice").innerText = price;
+document.getElementById("servicePrice").innerText=price;
+
 }
 
-function goHome(){
+function backHome(){
 
 document.getElementById("servicePage").classList.add("hidden");
-
-document.getElementById("cancelPage").classList.add("hidden");
-
-document.getElementById("ratingPage").classList.add("hidden");
-
-document.getElementById("bookingPage").classList.add("hidden");
 
 document.getElementById("homePage").classList.remove("hidden");
+
 }
 
-function bookService(){
+function confirmBooking(){
 
 document.getElementById("servicePage").classList.add("hidden");
 
-document.getElementById("loadingPage").classList.remove("hidden");
+document.getElementById("loaderPage").classList.remove("hidden");
 
-setTimeout(() => {
+setTimeout(()=>{
 
-document.getElementById("loadingPage").classList.add("hidden");
+document.getElementById("loaderPage").classList.add("hidden");
 
 document.getElementById("bookingPage").classList.remove("hidden");
 
 },2500);
 
-setTimeout(() => {
+}
+
+function cancelBooking(){
+
+alert("Booking Cancelled");
+
+location.reload();
+
+}
+
+function completeWork(){
 
 document.getElementById("bookingPage").classList.add("hidden");
 
 document.getElementById("ratingPage").classList.remove("hidden");
 
-},15000);
 }
 
-function cancelBooking(){
-
-document.getElementById("bookingPage").classList.add("hidden");
-
-document.getElementById("cancelPage").classList.remove("hidden");
-}
-
-function submitRating(){
+function submitFeedback(){
 
 alert("Thank You For Your Feedback");
 
-goHome();
+location.reload();
+
 }
 
-function openMenu(){
+function openProfile(){
 
-document.getElementById("sideMenu").style.right = "0";
+document.getElementById("profileMenu").style.right="0";
+
 }
 
-function closeMenu(){
+function closeProfile(){
 
-document.getElementById("sideMenu").style.right = "-100%";
+document.getElementById("profileMenu").style.right="-100%";
+
 }
 
 </script>
