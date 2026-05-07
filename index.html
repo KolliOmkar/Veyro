@@ -5,20 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEYRO</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f5f5f5;
-color:#222;
+background:#f5f7fb;
+overflow-x:hidden;
+color:#1f1f1f;
 }
 
-/* Splash Screen */
+/* SPLASH */
 
 #splash{
 position:fixed;
@@ -29,21 +33,22 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-z-index:9999;
+z-index:99999;
 color:white;
-animation:fadeOut 1s ease forwards;
+animation:fadeOut 1s forwards;
 animation-delay:2.5s;
 }
 
 #splash h1{
-font-size:50px;
-font-weight:bold;
-letter-spacing:4px;
+font-size:58px;
+font-weight:700;
+letter-spacing:5px;
 }
 
 #splash p{
 margin-top:10px;
 font-size:18px;
+opacity:0.9;
 }
 
 @keyframes fadeOut{
@@ -53,139 +58,183 @@ visibility:hidden;
 }
 }
 
-/* Main */
+/* APP */
 
-.container{
+.app{
 display:none;
-padding:20px;
+padding-bottom:120px;
 }
 
-header{
+/* HEADER */
+
+.header{
 background:linear-gradient(135deg,#ff7a00,#ff3c00);
-padding:18px;
-border-radius:18px;
+padding:22px;
+border-bottom-left-radius:30px;
+border-bottom-right-radius:30px;
 color:white;
+box-shadow:0 10px 25px rgba(255,90,0,0.25);
+}
+
+.topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:20px;
 }
 
 .logo{
-font-size:28px;
-font-weight:bold;
+font-size:30px;
+font-weight:700;
+letter-spacing:2px;
 }
 
 .profile{
-font-size:14px;
 text-align:right;
+font-size:13px;
 }
 
-.login-box{
+.logout{
+margin-top:4px;
+font-size:12px;
+opacity:0.9;
+}
+
+/* LOGIN */
+
+.login-card{
 background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+margin:25px;
+padding:30px 20px;
+border-radius:28px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 text-align:center;
-margin-top:30px;
+animation:up 0.6s ease;
 }
 
-.login-box h2{
+@keyframes up{
+from{
+transform:translateY(30px);
+opacity:0;
+}
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+.login-card h2{
+margin-bottom:10px;
+font-size:28px;
+}
+
+.login-card p{
+color:#777;
 margin-bottom:20px;
 }
 
 input{
 width:100%;
-padding:15px;
-border-radius:12px;
+padding:16px;
 border:none;
-background:#f1f1f1;
-margin-bottom:15px;
+background:#f1f3f7;
+border-radius:16px;
 font-size:16px;
+margin-bottom:16px;
+outline:none;
 }
 
 button{
 width:100%;
-padding:15px;
+padding:16px;
 border:none;
-border-radius:12px;
+border-radius:16px;
 background:linear-gradient(135deg,#ff7a00,#ff3c00);
 color:white;
 font-size:16px;
-font-weight:bold;
+font-weight:600;
 cursor:pointer;
+box-shadow:0 10px 20px rgba(255,90,0,0.25);
 }
+
+/* SERVICES */
 
 .services{
 display:none;
+padding:20px;
 }
 
-.services h2{
+.section-title{
+font-size:24px;
+font-weight:700;
 margin-bottom:20px;
 }
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:15px;
+gap:18px;
 }
 
 .card{
 background:white;
-padding:25px;
-border-radius:18px;
+padding:25px 15px;
+border-radius:24px;
 text-align:center;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,0.06);
 transition:0.3s;
+cursor:pointer;
 }
 
-.card:hover{
-transform:scale(1.03);
+.card:active{
+transform:scale(0.96);
 }
 
 .card span{
-font-size:40px;
+font-size:42px;
 display:block;
 margin-bottom:10px;
 }
 
-.booking{
+.card h3{
+font-size:17px;
+}
+
+/* SERVICE DETAILS */
+
+.details{
 display:none;
 background:white;
-padding:20px;
-margin-top:20px;
-border-radius:18px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+margin-top:25px;
+padding:25px;
+border-radius:28px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+animation:up 0.4s ease;
 }
 
 .price{
-font-size:28px;
-font-weight:bold;
-color:#ff5a00;
+font-size:34px;
+font-weight:700;
+color:#ff5e00;
 margin:15px 0;
+}
+
+.status{
+margin-top:20px;
+padding:16px;
+border-radius:16px;
+background:#fff3ec;
+color:#ff5e00;
+font-weight:600;
+display:none;
 }
 
 .chat{
 display:none;
 margin-top:20px;
-background:white;
 padding:20px;
-border-radius:18px;
-}
-
-.footer{
-text-align:center;
-margin-top:30px;
-font-size:14px;
-color:#777;
-}
-
-.logout{
-margin-top:10px;
-font-size:13px;
-cursor:pointer;
-color:#ffe0d0;
+background:#ffffff;
+border-radius:22px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
 .rating{
@@ -193,101 +242,196 @@ display:none;
 margin-top:20px;
 background:white;
 padding:20px;
-border-radius:18px;
+border-radius:22px;
 text-align:center;
 }
 
 .stars{
-font-size:30px;
-color:orange;
+font-size:35px;
 margin:10px 0;
+color:#ff9800;
 }
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-around;
+padding:18px 0;
+box-shadow:0 -5px 20px rgba(0,0,0,0.08);
+border-top-left-radius:25px;
+border-top-right-radius:25px;
+}
+
+.bottom-nav div{
+text-align:center;
+font-size:13px;
+color:#777;
+}
+
+.bottom-nav span{
+display:block;
+font-size:22px;
+margin-bottom:5px;
+}
+
+.footer{
+text-align:center;
+padding:25px;
+color:#888;
+font-size:13px;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- SPLASH -->
+
 <div id="splash">
 <h1>VEYRO</h1>
-<p>Home Services In Minutes</p>
+<p>Fast Home Services</p>
 </div>
 
-<div class="container" id="main">
+<!-- APP -->
 
-<header>
+<div class="app" id="app">
+
+<div class="header">
+
+<div class="topbar">
+
 <div class="logo">VEYRO</div>
 
 <div class="profile">
 <div id="userName">Guest</div>
-<div id="userMobile"></div>
+<div id="userPhone"></div>
 <div class="logout" onclick="logout()">Logout</div>
 </div>
-</header>
 
-<div class="login-box" id="loginBox">
+</div>
+
+</div>
+
+<!-- LOGIN -->
+
+<div class="login-card" id="loginBox">
+
 <h2>Welcome</h2>
 
-<input type="tel" id="mobile" placeholder="Enter 10 Digit Mobile Number" maxlength="10">
+<p>Login with Mobile Number</p>
+
+<input type="tel" maxlength="10" id="mobile" placeholder="Enter Mobile Number">
 
 <button onclick="login()">Continue</button>
+
 </div>
+
+<!-- SERVICES -->
 
 <div class="services" id="services">
 
-<h2>Select Service</h2>
+<div class="section-title">
+Choose Service
+</div>
 
 <div class="grid">
 
-<div class="card" onclick="bookService('Plumber','₹299')">
+<div class="card" onclick="openService('Plumber','₹299')">
 <span>🔧</span>
-Plumber
+<h3>Plumber</h3>
 </div>
 
-<div class="card" onclick="bookService('Painter','₹499')">
+<div class="card" onclick="openService('Painter','₹499')">
 <span>🎨</span>
-Painter
+<h3>Painter</h3>
 </div>
 
-<div class="card" onclick="bookService('Cleaning','₹399')">
+<div class="card" onclick="openService('Cleaning','₹399')">
 <span>🧹</span>
-Cleaning
+<h3>Cleaning</h3>
 </div>
 
-<div class="card" onclick="bookService('Electrician','₹349')">
+<div class="card" onclick="openService('Electrician','₹349')">
 <span>💡</span>
-Electrician
+<h3>Electrician</h3>
 </div>
 
 </div>
 
-<div class="booking" id="bookingBox">
+<!-- DETAILS -->
 
-<h3 id="serviceName"></h3>
+<div class="details" id="details">
+
+<h2 id="serviceTitle"></h2>
 
 <div class="price" id="servicePrice"></div>
 
-<input type="text" placeholder="Enter Location">
+<input type="text" placeholder="Enter Service Address">
 
-<button onclick="confirmBooking()">Book Now</button>
+<button onclick="bookNow()">Book Service</button>
 
+<div class="status" id="statusBox">
+Worker Assigning...
 </div>
+
+<!-- CHAT -->
 
 <div class="chat" id="chatBox">
-<h3>Chat Support</h3>
 
-<input type="text" placeholder="Type issue here">
+<h3>Support Chat</h3>
+
+<input type="text" placeholder="Type your issue">
 
 <button>Send Message</button>
+
 </div>
+
+<!-- RATING -->
 
 <div class="rating" id="ratingBox">
 
-<h3>Rate Your Experience</h3>
+<h3>Rate Service</h3>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <button>Submit Rating</button>
 
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+
+<div class="bottom-nav">
+
+<div>
+<span>🏠</span>
+Home
+</div>
+
+<div>
+<span>📦</span>
+Bookings
+</div>
+
+<div>
+<span>💬</span>
+Support
+</div>
+
+<div>
+<span>👤</span>
+Profile
 </div>
 
 </div>
@@ -301,42 +445,47 @@ VEYRO © 2025
 <script>
 
 setTimeout(()=>{
-document.getElementById("main").style.display="block";
+document.getElementById("app").style.display="block";
 },2500);
 
 function login(){
 
 let mobile=document.getElementById("mobile").value;
 
-if(mobile.length!==10){
-alert("Enter valid 10 digit number");
+if(mobile.length!=10){
+alert("Enter Valid Mobile Number");
 return;
 }
 
 document.getElementById("userName").innerText="Customer";
-document.getElementById("userMobile").innerText=mobile;
+document.getElementById("userPhone").innerText=mobile;
 
 document.getElementById("loginBox").style.display="none";
 document.getElementById("services").style.display="block";
 }
 
-function bookService(name,price){
+function openService(name,price){
 
-document.getElementById("bookingBox").style.display="block";
+document.getElementById("details").style.display="block";
 
-document.getElementById("serviceName").innerText=name;
+document.getElementById("serviceTitle").innerText=name;
+
 document.getElementById("servicePrice").innerText=price;
 }
 
-function confirmBooking(){
+function bookNow(){
 
-alert("Booking Confirmed!");
+document.getElementById("statusBox").style.display="block";
 
+setTimeout(()=>{
 document.getElementById("chatBox").style.display="block";
+},2000);
 
 setTimeout(()=>{
 document.getElementById("ratingBox").style.display="block";
-},3000);
+},4000);
+
+alert("Booking Confirmed");
 }
 
 function logout(){
